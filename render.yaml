@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: crop-stress-zoning
+    runtime: docker
+    plan: starter
+    disk: {name: data, mountPath: /data, sizeGB: 1}
+    envVars:
+      - {key: AGRONOMIST_INVITE_CODE, generateValue: true}
+      - {key: SEED_DEMO, value: "0"}

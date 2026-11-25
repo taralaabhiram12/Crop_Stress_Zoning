@@ -1,0 +1,12 @@
+services:
+  web:
+    build: .
+    ports: ["8501:8501"]
+    environment:
+      AGRONOMIST_INVITE_CODE: "change-this-secret-code"
+      SEED_DEMO: "0"          # set to 1 to create demo accounts on first start
+    volumes:
+      - cropdata:/data        # persists the database and scans
+    restart: unless-stopped
+volumes:
+  cropdata:
